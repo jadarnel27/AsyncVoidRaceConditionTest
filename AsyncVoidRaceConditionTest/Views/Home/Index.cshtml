@@ -22,21 +22,21 @@
                 console.log((new Date().toISOString()) + " before POST");
                 $.ajax({
                     method: 'POST',
-                    url: 'http://localhost/AsyncVoidRaceConditionTest/api/values',
+                    url: 'https://localhost:44334/api/values',
                     data: { value: "some thing" }
                 }).done(function () {
                     console.log((new Date().toISOString()) + " after POST success");
                     console.log((new Date().toISOString()) + " before PUT");
                     $.ajax({
                         method: 'PUT',
-                        url: 'http://localhost/AsyncVoidRaceConditionTest/api/values/5'
+                        url: 'https://localhost:44334/api/values/5'
                     }).done(function () {
                         console.log((new Date().toISOString()) + " after PUT success");
                     }).fail(function () {
                         console.log((new Date().toISOString()) + " after PUT failure");
                         $.ajax({
                             method: 'PUT',
-                            url: 'http://localhost/AsyncVoidRaceConditionTest/api/values/5'
+                            url: 'https://localhost:44334/api/values/5'
                         }).done(function () {
                             console.log((new Date().toISOString()) + " after PUT retry success");
                         })
